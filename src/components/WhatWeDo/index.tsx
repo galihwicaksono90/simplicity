@@ -1,6 +1,10 @@
+"use client"
+import { useRef } from "react"
 import { Text, Title } from "@/components/ui/"
 import { IconCircleCheck } from "@tabler/icons-react"
 import Carousel from "./Carousel"
+import { cn } from "@/lib/utils"
+import { useLazyLoader } from "@/lib/hooks"
 
 import slide1 from "../../../public/slide1.jpeg"
 import slide2 from "../../../public/slide2.jpeg"
@@ -34,10 +38,17 @@ const ListItem = ({ children }: { children: React.ReactNode }) => {
 }
 
 const WhatWeDo = () => {
+  const ref = useRef<HTMLDivElement>(null)
+  const [isVisible] = useLazyLoader({
+    elementRef: ref,
+    threshold: 0.5,
+    freezeOnceVisible: true
+  })
   return (
-    <section className="flex items-center justify-center flex-col py-32">
-      <div className="flex items-center justify-center flex-col gap-y-6 max-w-5xl ">
-        <Title>What We Do</Title>
+    <section className="flex items-center justify-center flex-col py-32" id="whatwedo" ref={ref}>
+      <div className={cn("flex items-center justify-center flex-col gap-y-6 max-w-5xl translate-y-8 opacity-0 transition-all",
+        isVisible ? "translate-y-0 opacity-100" : "")}>
+        <Title className="text-main">What We Do</Title>
         <Text className="text-center">
           Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit.
         </Text>

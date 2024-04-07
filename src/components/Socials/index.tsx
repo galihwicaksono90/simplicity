@@ -1,9 +1,21 @@
+"use client"
+
+import React, { useRef } from 'react'
 import { Title, Text } from "@/components/ui"
 import { IconBrandSpotify, IconBrandTiktok } from "@tabler/icons-react"
 
+import { cn } from "@/lib/utils"
+import { useLazyLoader } from "@/lib/hooks"
+
 const Socials = () => {
+  const elementRef = useRef<HTMLDivElement>(null)
+  const [isVisible] = useLazyLoader({
+    elementRef,
+    threshold: 0.5,
+    freezeOnceVisible: true
+  })
   return (
-    <section className="flex flex-col text-center gap-16 py-32">
+    <section className={cn("flex flex-col text-center gap-16 py-32 translate-y-8 opacity-0 transition-all ease-in-out ", isVisible ? "translate-y-0 opacity-100" : "")} id="socialmedias" ref={elementRef}>
       <Title className="text-main">
         Social Medias
       </Title>
@@ -15,10 +27,10 @@ const Socials = () => {
           </div>
           <div className="flex gap-16">
             <div className="w-full">
-              <iframe style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/episode/3dnQ6fWsvOz70AOCk30OBu?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              <iframe style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/episode/3dnQ6fWsvOz70AOCk30OBu?utm_source=generator" width="100%" height="152" frameBorder="0" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
             <div className="w-full">
-              <iframe style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/episode/3dnQ6fWsvOz70AOCk30OBu?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              <iframe style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/episode/3X9pkXyNXK6rrTEOEqK3cx?utm_source=generator" width="100%" height="152" frameBorder="0" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
           </div>
         </div>

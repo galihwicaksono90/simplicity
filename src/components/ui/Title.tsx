@@ -5,7 +5,7 @@ const Title = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLPa
   ({ className, ...props }, ref) => {
     return (
       <h1
-        className={cn(className, "text-6xl font-bold")}
+        className={cn("text-6xl font-extrabold leading-snug", className)}
         ref={ref}
         {...props}
       />

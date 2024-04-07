@@ -1,11 +1,12 @@
-import { Footer, Socials, Header, WhatWeDo, WhyChoose, Testimonials, WhoAreWe } from "@/components"
+import { Hero, Footer, Socials, Header, WhatWeDo, WhyChoose, Testimonials, WhoAreWe } from "@/components"
 
 export default function Home() {
   return (
-    <main className="text-foreground" >
+    <main className="text-foreground relative" >
       <Header />
+      <Hero />
       <WhatWeDo />
-      {/* <WhyChoose /> */}
+      <WhyChoose />
       <Testimonials />
       <WhoAreWe />
       <Socials />

@@ -1,6 +1,10 @@
-import React from 'react'
+"use client"
+
+import React, { useRef } from 'react'
 import { Text, Title } from "@/components/ui"
 import Image, { StaticImageData } from "next/image"
+import { cn } from "@/lib/utils"
+import { useLazyLoader } from "@/lib/hooks"
 
 import background from "../../../public/whoAreWe.png"
 import photo1 from "../../../public/photo1.png"
@@ -8,7 +12,6 @@ import photo2 from "../../../public/photo2.png"
 import photo3 from "../../../public/photo3.png"
 
 type AvatarData = { photo: StaticImageData, name: string, position: string }
-
 
 const people: AvatarData[] = [
   {
@@ -42,13 +45,21 @@ const Photo = ({ photo, name, position }: { photo: StaticImageData, name: string
   )
 }
 
+
+
 const WhoAreWe = () => {
+  const elementRef = useRef<HTMLDivElement>(null)
+  const [isVisible] = useLazyLoader({
+    elementRef,
+    threshold: 0.5,
+    freezeOnceVisible: true
+  })
   return (
-    <section className="relative flex items-center justify-center h-[900px] my-32" style={{ backgroundImage: `url(${background})`, backgroundPosition: "center", }}>
+    <section className="relative flex items-center justify-center h-[900px] my-32" style={{ backgroundImage: `url(${background})`, backgroundPosition: "center", }} >
       <div className="absolute -z-50 top-0 right-0 h-full overflow-hidden" >
         <Image src={background} alt="background" className="h-full" />
       </div>
-      <div className="flex flex-col text-white text-center gap-16">
+      <div className={cn("flex flex-col text-white text-center gap-16 translate-y-8 opacity-0 transition-all ease-in-out", isVisible ? "translate-y-0 opacity-100" : "")} ref={elementRef}>
         <Title>Who Are We?</Title>
         <div className="flex gap-16">
           {people.map((p, i) => (
