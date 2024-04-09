@@ -28,7 +28,7 @@ const config: Config = {
         span: {
           "3": "span 3 / span 3"
         }
-      }
+      },
     },
   },
   plugins: [],

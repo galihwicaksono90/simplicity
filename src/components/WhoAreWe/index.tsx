@@ -2,40 +2,36 @@
 
 import React, { useRef } from 'react'
 import { Text, Title } from "@/components/ui"
-import Image, { StaticImageData } from "next/image"
 import { cn } from "@/lib/utils"
 import { useLazyLoader } from "@/lib/hooks"
 
 import background from "../../../public/whoAreWe.png"
-import photo1 from "../../../public/photo1.png"
-import photo2 from "../../../public/photo2.png"
-import photo3 from "../../../public/photo3.png"
 
-type AvatarData = { photo: StaticImageData, name: string, position: string }
+type AvatarData = { photo: string, name: string, position: string }
 
 const people: AvatarData[] = [
   {
-    photo: photo2,
+    photo: "/photo1.png",
     name: "Roswida",
     position: "Director & Partner"
   },
   {
-    photo: photo3,
+    photo: "/photo3.png",
     name: "Ahmad Nizal",
     position: "Founder"
   },
   {
-    photo: photo1,
+    photo: "/photo2.png",
     name: "Kusmiawati Rahmat",
     position: "Founder"
   },
 ]
 
-const Photo = ({ photo, name, position }: { photo: StaticImageData, name: string, position: string }) => {
+const Photo = ({ photo, name, position }: { photo: string, name: string, position: string }) => {
   return (
     <div className="flex flex-col justify-center items-center gap-6">
       <div className="rounded-2xl h-[300px] w-[300px] overflow-hidden relative">
-        <Image src={photo} alt="Who are we" />
+        <img src={photo} alt="Who are we" />
       </div>
       <div className="flex flex-col gap-2">
         <Text className="font-bold">{name}</Text>
@@ -55,9 +51,9 @@ const WhoAreWe = () => {
     freezeOnceVisible: true
   })
   return (
-    <section className="relative flex items-center justify-center h-[900px] my-32" style={{ backgroundImage: `url(${background})`, backgroundPosition: "center", }} >
+    <section className="why-choose relative flex items-center justify-center h-[1000px] my-32 bg-[url('/whoAreWe.png')]">
       <div className="absolute -z-50 top-0 right-0 h-full overflow-hidden" >
-        <Image src={background} alt="background" className="h-full" />
+        <img src="/whoAreWe.png" alt="background" className="h-full" />
       </div>
       <div className={cn("flex flex-col text-white text-center gap-16 translate-y-8 opacity-0 transition-all ease-in-out", isVisible ? "translate-y-0 opacity-100" : "")} ref={elementRef}>
         <Title>Who Are We?</Title>

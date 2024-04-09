@@ -3,14 +3,14 @@ import { Hero, Footer, Socials, Header, WhatWeDo, WhyChoose, Testimonials, WhoAr
 export default function Home() {
   return (
     <main className="text-foreground relative" >
-      <Header />
-      <Hero />
-      <WhatWeDo />
+      {/* <Header /> */}
+      {/* <Hero /> */}
+      {/* <WhatWeDo /> */}
       <WhyChoose />
-      <Testimonials />
-      <WhoAreWe />
-      <Socials />
-      <Footer />
+      {/* <Testimonials /> */}
+      {/* <WhoAreWe /> */}
+      {/* <Socials /> */}
+      {/* <Footer /> */}
     </main>
   );
 }

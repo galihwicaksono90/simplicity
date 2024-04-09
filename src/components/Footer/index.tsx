@@ -1,8 +1,6 @@
 import { Text } from "@/components/ui"
 import { IconBrandFacebookFilled, IconBrandInstagram, IconBrandTiktokFilled } from "@tabler/icons-react"
 import { IconPhone, IconMail } from "@tabler/icons-react"
-import hq from "../../../public/hq.png"
-import Image from "next/image"
 
 const Footer = () => {
   return (
@@ -54,7 +52,7 @@ const Footer = () => {
         <div className="flex flex-col gap-6">
           <Text className="font-bold">Our Office</Text>
           <div className="relative overflow-hidden">
-            <Image src={hq} alt="hq" />
+            <img src='/hq.png' alt="hq" />
           </div>
           <Text className="text-base text-footerText">
             55 Changi Road #02-11 Millage

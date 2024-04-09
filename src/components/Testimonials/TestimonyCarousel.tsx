@@ -1,7 +1,6 @@
 "use client"
 
 import { Card, Text } from "@/components/ui"
-import Image from "next/image"
 import TestimonyCard, { CardProps } from "./TestimonyCard"
 import { EmblaOptionsType } from "embla-carousel"
 import useEmblaCarousel from "embla-carousel-react"

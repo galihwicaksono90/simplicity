@@ -5,10 +5,9 @@ import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
 import "./Carousel.css"
-import Image, { StaticImageData } from "next/image"
 
 type PropType = {
-  slides: StaticImageData[]
+  slides: string[]
   options?: EmblaOptionsType
 }
 
@@ -35,8 +34,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {
             slides.map((s, idx) => (
-              <div className="embla__slide overflow-hidden " key={idx}>
-                <Image src={s} alt="simplicity 1" />
+              <div className="embla__slide overflow-hidden h-160" key={idx}>
+                <img src={s} alt="simplicity 1" className="w-full h-full object-cover" />
               </div>
             ))
           }

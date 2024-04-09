@@ -5,7 +5,7 @@ const Testing = () => {
   return (
     <div>
       <Title className="text-main">What Customers say about Simplicity</Title>
-      <Text>For 18 years we have helped you make home a clean, relaxing refuge</Text>
+      <Text className="bg-main">For 18 years we have helped you make home a clean, relaxing refuge</Text>
     </div>
   )
 }

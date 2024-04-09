@@ -1,11 +1,9 @@
 import { Card, Text } from "@/components/ui"
 import { IconStarFilled } from "@tabler/icons-react"
-import Image, { StaticImageData } from "next/image"
-import avatar1 from "../../../public/avatar1.png"
 
 export type CardProps = {
   text: string
-  avatar: StaticImageData,
+  avatar: string,
   rating: 1 | 2 | 3 | 4 | 5
   name: string
 }
@@ -26,7 +24,7 @@ const TestimonyCard = ({ text, name, avatar, rating }: CardProps) => {
       <Text className="text-xl italic font-light text-center">&ldquo;{text}&rdquo;</Text>
       <Card className="absolute left-1/2 bottom-[-250px] w-[333px] flex flex-col items-center gap-4 translate-x-[-50%] translate-y-[-50%]">
         <div className="rounded-full bg-orange h-[100px] w-[100px] overflow-hidden relative">
-          <Image src={avatar} alt="testimonial 1" />
+          <img src={avatar} alt="testimonial 1" />
         </div>
         <div className="h-[2px] bg-foreground w-full" />
         <Text className="font-bold">{name}</Text>

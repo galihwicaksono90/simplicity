@@ -2,9 +2,6 @@
 import { useEffect, useState, useCallback } from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import Image from "next/image"
-
-import logoSmall from "../../../public/logosmall.png"
 
 const Header = () => {
   const [navPosition, setNavPosition] = useState<boolean>(false);
@@ -28,7 +25,7 @@ const Header = () => {
     )}>
       <div className={cn("flex justify-center w-full max-w-[1000px] py-10", navPosition ? "justify-between" : "")} >
         <div className={cn("relative h-full w-[250px]", navPosition ? "inline" : "hidden")}>
-          <Image src={logoSmall} alt="logo" objectFit="cover" />
+          <img src="/logosmall.png" alt="logo" />
         </div>
         <ul className="flex gap-4 font-bold items-center">
           <Link href="#whatwedo"><li>What We Do</li></Link>
