@@ -11,17 +11,17 @@ type AvatarData = { photo: string, name: string, position: string }
 
 const people: AvatarData[] = [
   {
-    photo: "/photo1.png",
+    photo: "/photo2.png",
     name: "Roswida",
     position: "Director & Partner"
   },
   {
-    photo: "/photo3.png",
+    photo: "/photo4.jpeg",
     name: "Ahmad Nizal",
     position: "Founder"
   },
   {
-    photo: "/photo2.png",
+    photo: "/avatar3.jpg",
     name: "Kusmiawati Rahmat",
     position: "Founder"
   },
@@ -30,7 +30,7 @@ const people: AvatarData[] = [
 const Photo = ({ photo, name, position }: { photo: string, name: string, position: string }) => {
   return (
     <div className="flex flex-col justify-center items-center gap-6">
-      <div className="rounded-2xl h-[300px] w-[300px] overflow-hidden relative">
+      <div className="rounded-2xl h-[300px] w-[300px] overflow-hidden relative flex justify-center items-center bg-gray-100">
         <img src={photo} alt="Who are we" />
       </div>
       <div className="flex flex-col gap-2">
@@ -51,13 +51,13 @@ const WhoAreWe = () => {
     freezeOnceVisible: true
   })
   return (
-    <section className="why-choose relative flex items-center justify-center h-[1000px] my-32 bg-[url('/whoAreWe.png')]">
+    <section className="why-choose relative flex items-center justify-center min-h-[1000px] my-32 bg-[url('/whoAreWe.png')] py-32 px-16">
       <div className="absolute -z-50 top-0 right-0 h-full overflow-hidden" >
         <img src="/whoAreWe.png" alt="background" className="h-full" />
       </div>
       <div className={cn("flex flex-col text-white text-center gap-16 translate-y-8 opacity-0 transition-all ease-in-out", isVisible ? "translate-y-0 opacity-100" : "")} ref={elementRef}>
         <Title>Who Are We?</Title>
-        <div className="flex gap-16">
+        <div className="flex flex-col lg:flex-row gap-16">
           {people.map((p, i) => (
             <Photo {...p} key={i} />
           ))}

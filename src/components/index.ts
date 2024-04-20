@@ -6,5 +6,6 @@ import Testimonials from "./Testimonials"
 import WhoAreWe from "./WhoAreWe"
 import Socials from "./Socials"
 import Footer from "./Footer"
+import Ratings from "./Ratings"
 
-export { Header, WhatWeDo, WhyChoose, Testimonials, WhoAreWe, Socials, Footer, Hero }
+export { Header, WhatWeDo, WhyChoose, Testimonials, WhoAreWe, Socials, Footer, Hero, Ratings }

@@ -15,11 +15,11 @@ const Testimonials = () => {
   })
 
   return (
-    <section className={cn("flex flex-col gap-16 items-center py-16 translate-y-8 opacity-0 transition-all ease-in-out", isVisible ? "translate-y-0 opacity-100" : "")} ref={ref}>
+    <section className={cn("flex flex-col gap-16 items-center py-16 translate-y-8 opacity-0 transition-all ease-in-out px-16 text-center ", isVisible ? "translate-y-0 opacity-100" : "")} ref={ref}>
       <Title className="text-main">What Customers say about Simplicity</Title>
       <TestimonyCarousel slides={testimonials} options={{ loop: true }} />
     </section>
-  )  
+  )
 }
 
 export default Testimonials 

@@ -15,36 +15,36 @@ const WhyChoose = () => {
     freezeOnceVisible: true
   })
   return (
-    <section className="relative flex items-center justify-center h-[1000px] my-32" style={{ backgroundImage: `url(${background})`, backgroundPosition: "center", }}>
+    <section className="relative flex items-center justify-center my-32 px-16 py-64" style={{ backgroundImage: `url(${background})`, backgroundPosition: "center", }}>
       <div className="absolute -z-50 top-0 right-0 h-full overflow-hidden" >
         <Image src={background} alt="background" className="h-full" />
       </div>
       <div className={cn("flex flex-col gap-16 translate-y-8 opacity-0 transition-all ease-in-out", isVisible ? "translate-y-0 opacity-100" : "")} ref={ref}>
         <div className="flex flex-col text-center  items-center gap-4">
           <Title className="text-white">Why choose Simplicity</Title>
-          <Text className="text-white">The only maid service that cleans your home and runs your errands for you</Text>
+          <Text className="text-white">The only maid service that cleans your home and runs your errands for you</Text>
         </div>
-        <div className="grid grid-cols-6 gap-4 max-w-[974px]">
-          <CardItem className={"col-span-2"}>
+        <div className="grid grid-cols-1  gap-4 max-w-[974px] mx-auto sm:grid-cols-6">
+          <CardItem className={"col-span-3 sm:col-span-3 md:col-span-2"}>
             <div className="relative">
-              <span className="absolute top-[17px] left-[30px] text-secondary text-3xl">18</span>
+              <span className="absolute sm:top-[17px] top-[24px] sm:left-[30px] left-[36px] text-secondary text-3xl">18</span>
               <Icon1 className="text-secondary h-[90px] w-auto stroke-1" />
             </div>
             <Text>We have 18 years experience in Domestic helpers business.</Text>
           </CardItem>
-          <CardItem className={"col-span-2"}>
+          <CardItem className={"col-span-3 sm:col-span-3 md:col-span-2"}>
             <Icon2 className="text-secondary h-[90px] w-auto stroke-1" />
             <Text>Your queries are relevant.</Text>
           </CardItem>
-          <CardItem  className={"col-span-2"}>
+          <CardItem  className={"col-span-3 sm:col-span-3 md:col-span-2"}>
             <Icon3  className="text-secondary h-[90px] w-auto stroke-1" />
             <Text>We ensure your request are delivered.</Text>
           </CardItem>
-          <CardItem  className={"col-span-3"}>
+          <CardItem  className={"col-span-3 sm:col-span-3 md:col-span-3"}>
             <Icon4  className="text-secondary h-[90px] w-auto stroke-1" />
             <Text>We built great relationship with customers.</Text>
           </CardItem>
-          <CardItem  className={"col-span-3"}>
+          <CardItem  className={"col-span-3 sm:col-span-6 md:col-span-3"}>
             <Icon5  className="text-secondary h-[90px] w-auto stroke-1" />
             <Text>We are commited to our customer request & take pride to fulfill their request</Text>
           </CardItem>
@@ -60,7 +60,7 @@ type CardItemProps = {
 }
 const CardItem = ({ children, className }: CardItemProps) => {
   return (
-    <Card className={cn("flex flex-col items-center gap-8 text-foreground font-bold text-center h-[330px]", className)}>
+    <Card className={cn("flex flex-col items-center gap-8 text-foreground font-bold text-center h-[250px] md:h-[330px]", className)}>
       {children}
     </Card>
   )

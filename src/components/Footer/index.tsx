@@ -5,7 +5,7 @@ import { IconPhone, IconMail } from "@tabler/icons-react"
 const Footer = () => {
   return (
     <footer className="bg-footer text-white flex flex-col items-center" style={{ zIndex: -15 }} id="contactus">
-      <div className="flex  justify-between w-[1000px] py-16">
+      <div className="flex flex-col lg:flex-row gap-16 justify-between lg:min-w-[1000px] py-16 px-16">
         <div className="flex flex-col gap-6">
           <Text className="font-bold">Subscribe</Text>
           <div className="flex flex-col gap-2">
@@ -63,7 +63,7 @@ const Footer = () => {
 
       <div className="text-center bg-footerLight w-full py-2">
         <Text className="text-sm">
-          Copyright 2024
+          Copyright@2024
         </Text>
       </div>
     </footer>
