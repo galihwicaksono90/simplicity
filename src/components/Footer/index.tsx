@@ -1,6 +1,7 @@
 import { Text } from "@/components/ui"
-import { IconBrandFacebookFilled, IconBrandInstagram, IconBrandTiktokFilled } from "@tabler/icons-react"
+import { IconBrandFacebookFilled, IconBrandInstagram, IconBrandTiktokFilled, IconMapPin } from "@tabler/icons-react"
 import { IconPhone, IconMail } from "@tabler/icons-react"
+import Link from "next/link"
 
 const Footer = () => {
   return (
@@ -45,19 +46,24 @@ const Footer = () => {
               <Text className="text-lg">
                 Email
               </Text>
-              <Text className="text-base">simplicyt@examplemail.com</Text>
+              <Text className="text-base">simplicity.emp.sg@gmail.com</Text>
             </div>
           </div>
         </div>
         <div className="flex flex-col gap-6">
           <Text className="font-bold">Our Office</Text>
-          <div className="relative overflow-hidden">
-            <img src='/hq.png' alt="hq" />
-          </div>
-          <Text className="text-base text-footerText">
-            55 Changi Road #02-11 Millage
-            Singapore 419709
-          </Text>
+          <Link className="flex flex-col gap-6" href="https://www.google.com/maps/place/Simplicity+Employment+Agency/@1.4346207,103.8439003,17z/data=!4m16!1m9!3m8!1s0x31da157bb0f3c127:0x99e18632fa6653d1!2sSimplicity+Employment+Agency!8m2!3d1.4346207!4d103.8439003!9m1!1b1!16s%2Fg%2F11vz491b9_!3m5!1s0x31da157bb0f3c127:0x99e18632fa6653d1!8m2!3d1.4346207!4d103.8439003!16s%2Fg%2F11vz491b9_?entry=ttu">
+            <div className="relative overflow-hidden">
+              <img src='/hq.png' alt="hq" />
+            </div>
+            <div className="flex gap-2">
+              <IconMapPin />
+              <Text className="text-base text-footerText">
+                55 Changi Road #02-11 Millage
+                Singapore 419709
+              </Text>
+            </div>
+          </Link>
         </div>
       </div>
 

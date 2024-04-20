@@ -1,4 +1,4 @@
-import { Hero, Footer, Socials, Header, WhatWeDo, WhyChoose, Testimonials, WhoAreWe, Ratings } from "@/components"
+import { Hero, Footer, Socials, Header, WhatWeDo, WhyChoose, WhoAreWe, Ratings } from "@/components"
 
 export default function Home() {
   return (
@@ -8,8 +8,8 @@ export default function Home() {
         <Hero />
         <WhatWeDo />
         <WhyChoose />
-        {/* <Ratings /> */}
-        <Testimonials />
+        <Ratings />
+        {/* <Testimonials /> */}
         <WhoAreWe />
         <Socials />
         <Footer />

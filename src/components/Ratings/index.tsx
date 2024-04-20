@@ -1,17 +1,31 @@
-const Ratings = () => {
-  return (
-    <div>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5676888650137!2d103.8439003!3d1.4346207000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da157bb0f3c127%3A0x99e18632fa6653d1!2sSimplicity%20Employment%20Agency!5e0!3m2!1sen!2sid!4v1713616787312!5m2!1sen!2sid"
-        width="600"
-        height="450"
-        style={{ border: 0 }}
-        allowFullScreen={false}
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade">
+"use client"
+import { useRef } from "react"
+import { Title, Text } from "@/components/ui"
+import { cn } from "@/lib/utils"
+import { useLazyLoader } from "@/lib/hooks"
+import Link from "next/link"
 
-      </iframe>
-    </div>
+const Ratings = () => {
+  const ref = useRef<HTMLDivElement>(null)
+  const [isVisible] = useLazyLoader({
+    elementRef: ref,
+    threshold: 0.5,
+    freezeOnceVisible: true
+  })
+  return (
+
+    <section className={cn("flex flex-col gap-16 items-center py-16 translate-y-8 opacity-0 transition-all ease-in-out px-16 text-center ", isVisible ? "translate-y-0 opacity-100" : "")} ref={ref}>
+      <Title className="text-main">What Customers say about Simplicity</Title>
+      <Link target="_blank" href="https://www.google.com/maps/place/Simplicity+Employment+Agency/@1.4346207,103.8439003,17z/data=!4m8!3m7!1s0x31da157bb0f3c127:0x99e18632fa6653d1!8m2!3d1.4346207!4d103.8439003!9m1!1b1!16s%2Fg%2F11vz491b9_?entry=ttu">
+        <div className="py-32">
+          <img src="/reviews.png" alt="google reviews" />
+        </div>
+      </Link>
+
+      <Link target="_blank" href="https://g.page/r/CdFTZvoyhuGZEB0/review">
+        <Title className="text-3xl underline">Submit your review</Title>
+      </Link>
+    </section>
   )
 }
 

@@ -42,9 +42,6 @@ const WhatWeDo = () => {
       <div className={cn("flex items-center justify-center flex-col gap-y-6 max-w-5xl translate-y-8 opacity-0 transition-all px-16",
         isVisible ? "translate-y-0 opacity-100" : "")}>
         <Title className="text-main text-center">What We Do</Title>
-        <Text className="text-center">
-          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit.
-        </Text>
         <ul className="flex gap-8 flex-col justify-start md:flex-row ">
           <div className="flex flex-col gap-4">
             <ListItem>Workpermit Process <br />(Application / Renewal / Cancellation)</ListItem>
