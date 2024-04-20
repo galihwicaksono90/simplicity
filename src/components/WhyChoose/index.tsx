@@ -1,7 +1,5 @@
 "use client"
 import { ReactNode, useRef } from "react"
-import Image from "next/image"
-import background from "../../../public/whyChoose.png"
 import { Text, Title, Card } from "@/components/ui"
 import { IconAward as Icon1, IconThumbUp as Icon2, IconCheckupList as Icon3, IconHeartHandshake as Icon4, IconMoodHappy as Icon5 } from "@tabler/icons-react"
 import { cn } from "@/lib/utils"
@@ -15,9 +13,10 @@ const WhyChoose = () => {
     freezeOnceVisible: true
   })
   return (
-    <section className="relative flex items-center justify-center my-32 px-16 py-64" style={{ backgroundImage: `url(${background})`, backgroundPosition: "center", }}>
-      <div className="absolute -z-50 top-0 right-0 h-full overflow-hidden" >
-        <Image src={background} alt="background" className="h-full" />
+    <section className="relative flex items-center justify-center my-32 px-16 py-64" >
+      <div className="absolute -z-50 top-0 right-0 bottom-0 left-0 overflow-hidden bg-cover" style={{ backgroundImage: `url(/whyChoose.png)`}}>
+        {/* <Image src={background} alt="background" className="h-full" /> */}
+        {/* <img src="/whyChoose.png" className="h-full"/> */}
       </div>
       <div className={cn("flex flex-col gap-16 translate-y-8 opacity-0 transition-all ease-in-out", isVisible ? "translate-y-0 opacity-100" : "")} ref={ref}>
         <div className="flex flex-col text-center  items-center gap-4">

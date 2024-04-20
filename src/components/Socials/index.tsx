@@ -14,8 +14,9 @@ const Socials = () => {
     threshold: 0.5,
     freezeOnceVisible: true
   })
+
   return (
-    <section className={cn("px-16 flex flex-col text-center gap-16 py-32 translate-y-8 opacity-0 transition-all ease-in-out ", isVisible ? "translate-y-0 opacity-100" : "")} id="socialmedias" ref={elementRef}>
+    <section className={cn("px-16 flex flex-col text-center gap-16 py-64 translate-y-8 opacity-0 transition-all ease-in-out ", isVisible ? "translate-y-0 opacity-100" : "")} id="socialmedias" ref={elementRef}>
       <Title className="text-main">
         Social Medias
       </Title>

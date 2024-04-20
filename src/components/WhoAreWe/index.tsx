@@ -51,9 +51,8 @@ const WhoAreWe = () => {
     freezeOnceVisible: true
   })
   return (
-    <section className="why-choose relative flex items-center justify-center min-h-[1000px] my-32 bg-[url('/whoAreWe.png')] py-32 px-16">
-      <div className="absolute -z-50 top-0 right-0 h-full overflow-hidden" >
-        <img src="/whoAreWe.png" alt="background" className="h-full" />
+    <section className="why-choose relative flex items-center justify-center min-h-[1000px] my-32 py-96 sm:py-64 px-16">
+      <div className="absolute -z-50 top-0 right-0 bottom-[-100px] left-0 bg-cover" style={{ backgroundImage: `url(/whoAreWe.png)` }}>
       </div>
       <div className={cn("flex flex-col text-white text-center gap-16 translate-y-8 opacity-0 transition-all ease-in-out", isVisible ? "translate-y-0 opacity-100" : "")} ref={elementRef}>
         <Title>Who Are We?</Title>
