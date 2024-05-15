@@ -20,11 +20,11 @@ const people: AvatarData[] = [
     name: "Ahmad Nizal",
     position: "Founder"
   },
-  {
-    photo: "/avatar3.jpg",
-    name: "Kusmiawati Rahmat",
-    position: "Founder"
-  },
+  // {
+  //   photo: "/avatar3.jpg",
+  //   name: "Kusmiawati Rahmat",
+  //   position: "Founder"
+  // },
 ]
 
 const Photo = ({ photo, name, position }: { photo: string, name: string, position: string }) => {
@@ -56,7 +56,7 @@ const WhoAreWe = () => {
       </div>
       <div className={cn("flex flex-col text-white text-center gap-16 translate-y-8 opacity-0 transition-all ease-in-out", isVisible ? "translate-y-0 opacity-100" : "")} ref={elementRef}>
         <Title>Who Are We?</Title>
-        <div className="flex flex-col lg:flex-row gap-16">
+        <div className="flex flex-col lg:flex-row gap-32">
           {people.map((p, i) => (
             <Photo {...p} key={i} />
           ))}
