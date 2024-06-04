@@ -13,7 +13,7 @@ const people: AvatarData[] = [
   {
     photo: "/photo2.png",
     name: "Roswida",
-    position: "Director & Partner"
+    position: "Director & Business Partner"
   },
   {
     photo: "/photo4.jpeg",
